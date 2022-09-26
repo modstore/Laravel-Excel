@@ -114,7 +114,7 @@ class ReadChunk implements ShouldQueue
      */
     public function tags()
     {
-        return (method_exists($this->sheetExport, 'tags')) ? $this->sheetExport->tags() : [];
+        return (method_exists($this->import, 'tags')) ? $this->import->tags() : [];
     }
 
     /**

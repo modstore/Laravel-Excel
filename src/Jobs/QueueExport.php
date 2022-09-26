@@ -58,7 +58,7 @@ class QueueExport implements ShouldQueue
      */
     public function tags()
     {
-        return (method_exists($this->sheetExport, 'tags')) ? $this->sheetExport->tags() : [];
+        return (method_exists($this->export, 'tags')) ? $this->export->tags() : [];
     }
 
     /**
