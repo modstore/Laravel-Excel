@@ -108,6 +108,16 @@ class ReadChunk implements ShouldQueue
     }
 
     /**
+     * Get the tags that should be added to the job.
+     *
+     * @return array
+     */
+    public function tags()
+    {
+        return (method_exists($this->sheetExport, 'tags')) ? $this->sheetExport->tags() : [];
+    }
+
+    /**
      * Determine the time at which the job should timeout.
      *
      * @return \DateTime

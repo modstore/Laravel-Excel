@@ -61,6 +61,16 @@ class AppendViewToSheet implements ShouldQueue
     }
 
     /**
+     * Get the tags that should be added to the job.
+     *
+     * @return array
+     */
+    public function tags()
+    {
+        return (method_exists($this->sheetExport, 'tags')) ? $this->sheetExport->tags() : [];
+    }
+
+    /**
      * @param  Writer  $writer
      *
      * @throws \PhpOffice\PhpSpreadsheet\Exception
